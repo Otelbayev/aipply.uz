@@ -44,7 +44,7 @@ export default function Hero() {
                   Ochiq darsga yoziling!
                 </p>
                 <button className="w-full px-6 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-md font-medium transition">
-                  Ro'yxatdan o'tish
+                  Ro&apos;yxatdan o&apos;tish
                 </button>
               </div>
             </motion.div>
