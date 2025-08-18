@@ -22,7 +22,7 @@ const socialIconVariants: Variants = {
   hover: { scale: 1.2, transition: { type: "spring", stiffness: 300 } },
 };
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer
       className="relative w-full text-white pt-16 pb-12"
@@ -106,19 +106,19 @@ const Footer: React.FC = () => {
         >
           <h3 className="text-lg font-semibold">Sayt bo‘limlari</h3>
           <a
-            href="#about"
+            href="/#about"
             className="hover:underline hover:text-yellow-300 transition-colors"
           >
             Biz haqimizda
           </a>
           <a
-            href="#courses"
+            href="/#courses"
             className="hover:underline hover:text-yellow-300 transition-colors"
           >
             Kurslar
           </a>
           <a
-            href="#mentors"
+            href="/#mentors"
             className="hover:underline hover:text-yellow-300 transition-colors"
           >
             Mentorlar

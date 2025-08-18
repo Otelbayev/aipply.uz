@@ -24,7 +24,6 @@ const Mentors = () => {
     setIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  // Ko‘rinadigan rasmlar (dynamic responsiv)
   const visibleImages = [
     images[index % images.length],
     images[(index + 1) % images.length],

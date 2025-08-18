@@ -26,13 +26,13 @@ const Header = () => {
         className="sticky top-0 z-50 bg-white/70 backdrop-blur-md"
       >
         <div className="h-16 flex items-center justify-between">
-          {/* Logo */}
-          <motion.div
+          <motion.a
             variants={fadeUp}
+            href="/"
             initial="hidden"
             animate="visible"
             custom={0.2}
-            className="flex items-center gap-2"
+            className="flex cursor-pointer items-center gap-2"
           >
             <Image
               src="/logo.png"
@@ -40,7 +40,7 @@ const Header = () => {
               width={130}
               height={60}
             />
-          </motion.div>
+          </motion.a>
 
           {/* Desktop menu */}
           <motion.nav
@@ -51,21 +51,21 @@ const Header = () => {
             className="hidden md:flex items-center gap-8 text-sm font-medium"
           >
             <motion.a
-              href="#about"
+              href="/#about"
               whileHover={{ scale: 1.05 }}
               className="bg-title font-semibold hover:text-blue-600"
             >
               Biz haqimizda
             </motion.a>
             <motion.a
-              href="#courses"
+              href="/#courses"
               whileHover={{ scale: 1.05 }}
               className="bg-title font-semibold hover:text-blue-600"
             >
               Kurslar
             </motion.a>
             <motion.a
-              href="#contact"
+              href="/#contact"
               whileHover={{ scale: 1.05 }}
               className="bg-title font-semibold hover:text-blue-600"
             >
@@ -84,7 +84,7 @@ const Header = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#courses"
+              href="/#courses"
               className="text-sm font-medium rounded-full px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md hover:opacity-90 transition"
             >
               Kurslarni ko‘rish
@@ -131,7 +131,7 @@ const Header = () => {
               >
                 <motion.a
                   onClick={() => setOpen(false)}
-                  href="#about"
+                  href="/#about"
                   whileHover={{ x: 5 }}
                   className="bg-title font-semibold hover:text-blue-600"
                 >
@@ -139,7 +139,7 @@ const Header = () => {
                 </motion.a>
                 <motion.a
                   onClick={() => setOpen(false)}
-                  href="#courses"
+                  href="/#courses"
                   whileHover={{ x: 5 }}
                   className="bg-title font-semibold hover:text-blue-600"
                 >
@@ -147,7 +147,7 @@ const Header = () => {
                 </motion.a>
                 <motion.a
                   onClick={() => setOpen(false)}
-                  href="#contact"
+                  href="/#contact"
                   whileHover={{ x: 5 }}
                   className="bg-title font-semibold hover:text-blue-600"
                 >
@@ -155,7 +155,7 @@ const Header = () => {
                 </motion.a>
                 <motion.a
                   onClick={() => setOpen(false)}
-                  href="#courses"
+                  href="/#courses"
                   whileHover={{ scale: 1.05 }}
                   className="mt-2 text-sm font-medium rounded-full px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md text-center"
                 >
