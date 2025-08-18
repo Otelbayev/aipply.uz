@@ -20,7 +20,9 @@ export default function Hero() {
   }, [isMobile]);
 
   const fadeVariant = (delay = 0) => ({
-    initial: isMobile ? { opacity: 0, x: -30 } : { opacity: 0, y: 30 },
+    initial: isMobile
+      ? { opacity: 0, x: 0, y: 30 }
+      : { opacity: 0, y: 0, x: -30 },
     animate: { opacity: 1, x: 0, y: 0 },
     transition: { duration: 0.8 + delay, delay },
   });
@@ -28,10 +30,10 @@ export default function Hero() {
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={bgLoaded ? { opacity: 1 } : {}} // faqat bg yuklangach animate
+      animate={bgLoaded ? { opacity: 1 } : {}}
       transition={{ duration: 1.5, ease: "easeInOut" }}
       className="
-        relative min-h-[calc(100vh-64px)] flex items-center
+        relative min-h-[calc(100dvh-64px)] flex items-center
         bg-center bg-cover
         bg-[url('/mobile-hero.png')]  
         md:bg-[url('/hero.png')]  
