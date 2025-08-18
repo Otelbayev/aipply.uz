@@ -58,7 +58,7 @@ export default function Hero() {
                     Ochiq darsga yoziling!
                   </p>
                   <Link href={"/lid"} className="w-full">
-                    <button className="w-full px-6 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-md font-medium transition">
+                    <button className="w-full px-6 py-2  cursor-pointer bg-blue-700 hover:bg-blue-800 text-white rounded-md font-medium transition">
                       Ro&apos;yxatdan o&apos;tish
                     </button>
                   </Link>

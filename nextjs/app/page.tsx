@@ -20,14 +20,14 @@ export default function Page() {
       <Hero />
       <Numbers />
       <Results />
-      <section id="about">
-        <Why />
-      </section>
+
+      <Why />
+
       <Banner />
       <Comments />
-      <section id="courses">
-        <Courses />
-      </section>
+
+      <Courses />
+
       <Sponsors />
       <Mentors />
       <Bottom />
