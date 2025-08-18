@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -15,7 +16,7 @@ export default function Hero() {
 
   useEffect(() => {
     const img = new Image();
-    img.src = isMobile ? "/mobile-hero.png" : "/hero.png";
+    img.src = isMobile ? "/images/mobile-hero.png" : "/images/hero.png";
     img.onload = () => setBgLoaded(true);
   }, [isMobile]);
 
@@ -24,19 +25,19 @@ export default function Hero() {
       ? { opacity: 0, x: 0, y: 30 }
       : { opacity: 0, y: 0, x: -30 },
     animate: { opacity: 1, x: 0, y: 0 },
-    transition: { duration: 0.8 + delay, delay },
+    transition: { duration: 0.5 + delay, delay },
   });
 
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={bgLoaded ? { opacity: 1 } : {}}
-      transition={{ duration: 1.5, ease: "easeInOut" }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
       className="
     relative min-h-[calc(100dvh-64px)] flex items-center
     bg-center bg-cover
-    bg-[url('/mobile-hero.png')]  
-    md:bg-[url('/hero.png')]  
+    bg-[url('/images/mobile-hero.png')]  
+    md:bg-[url('/images/hero.png')]  
     before:absolute before:top-0 before:left-0 before:right-0 before:h-24 
     before:bg-gradient-to-b before:from-white before:to-transparent
     after:absolute after:bottom-0 after:left-0 after:right-0 after:h-24
@@ -56,9 +57,11 @@ export default function Hero() {
                   <p className="text-sky-600 font-bold text-3xl text-center md:text-4xl md:text-left bg-title mb-5">
                     Ochiq darsga yoziling!
                   </p>
-                  <button className="w-full px-6 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-md font-medium transition">
-                    Ro&apos;yxatdan o&apos;tish
-                  </button>
+                  <Link href={"/lid"} className="w-full">
+                    <button className="w-full px-6 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-md font-medium transition">
+                      Ro&apos;yxatdan o&apos;tish
+                    </button>
+                  </Link>
                 </div>
               </motion.div>
             </div>

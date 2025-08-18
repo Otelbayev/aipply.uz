@@ -1,13 +1,39 @@
 "use client";
 
+import Banner from "@/components/banner";
+import Comments from "@/components/comments";
+import Courses from "@/components/courses";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
+import Mentors from "@/components/mentors";
+import Numbers from "@/components/numbers";
+import Results from "@/components/results";
+import Sponsors from "@/components/sponsors";
+import Why from "@/components/why";
+import Bottom from "./bottom";
 
 export default function Page() {
   return (
     <div>
       <Header />
       <Hero />
+      <Numbers />
+      <Results />
+      <section id="about">
+        <Why />
+      </section>
+      <Banner />
+      <Comments />
+      <section id="courses">
+        <Courses />
+      </section>
+      <Sponsors />
+      <Mentors />
+      <Bottom />
+      <section id="contact">
+        <Footer />
+      </section>
     </div>
   );
 }

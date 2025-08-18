@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 1536px;
   margin: 0 auto;
@@ -10,6 +14,7 @@
   background: linear-gradient(271.96deg, #02a5e0 19.32%, #0000b0 100%);
   color: transparent;
   background-clip: text;
+  line-height: normal;
   -webkit-background-clip: text;
 }
 
@@ -21,7 +26,7 @@
 
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
+    max-width: 90%;
   }
 }
 
