@@ -33,11 +33,15 @@ export default function Hero() {
       animate={bgLoaded ? { opacity: 1 } : {}}
       transition={{ duration: 1.5, ease: "easeInOut" }}
       className="
-        relative min-h-[calc(100dvh-64px)] flex items-center
-        bg-center bg-cover
-        bg-[url('/mobile-hero.png')]  
-        md:bg-[url('/hero.png')]  
-      "
+    relative min-h-[calc(100dvh-64px)] flex items-center
+    bg-center bg-cover
+    bg-[url('/mobile-hero.png')]  
+    md:bg-[url('/hero.png')]  
+    before:absolute before:top-0 before:left-0 before:right-0 before:h-24 
+    before:bg-gradient-to-b before:from-white before:to-transparent
+    after:absolute after:bottom-0 after:left-0 after:right-0 after:h-24
+    after:bg-gradient-to-t after:from-white after:to-transparent
+  "
     >
       {bgLoaded && (
         <div className="container">
