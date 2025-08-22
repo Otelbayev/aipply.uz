@@ -1,24 +1,18 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, useAnimation, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-
-type Props = {
-  images: string[];
-
-  speed?: number;
-
-  gapClass?: string;
-  aspect: string;
-};
 
 export default function AutoMarqueeSlider({
   images,
   speed = 120,
   gapClass = "gap-4",
   aspect,
-}: Props) {
+}: {
+  images: string[];
+  speed?: number;
+  gapClass?: string;
+  aspect: string;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const shouldReduceMotion = useReducedMotion();
@@ -26,7 +20,8 @@ export default function AutoMarqueeSlider({
 
   const doubled = [...images, ...images];
 
-  const startLoop = async () => {
+  // 🔹 useCallback bilan o‘raldi
+  const startLoop = useCallback(async () => {
     if (!trackRef.current) return;
     const total = trackRef.current.scrollWidth / 2;
     if (total <= 0) return;
@@ -39,14 +34,11 @@ export default function AutoMarqueeSlider({
 
     await controls.set({ x: 0 });
     startLoop();
-  };
+  }, [controls, speed]);
 
   useEffect(() => {
     if (shouldReduceMotion) return;
-
-    const id = window.setTimeout(() => {
-      setReady(true);
-    }, 50);
+    const id = window.setTimeout(() => setReady(true), 50);
     return () => window.clearTimeout(id);
   }, [shouldReduceMotion]);
 
@@ -65,20 +57,19 @@ export default function AutoMarqueeSlider({
     const onResize = () => {
       paused = true;
       controls.stop();
-
       requestAnimationFrame(() => {
         paused = false;
         controls.set({ x: 0 });
         run();
       });
     };
-    window.addEventListener("resize", onResize);
 
+    window.addEventListener("resize", onResize);
     return () => {
       window.removeEventListener("resize", onResize);
       controls.stop();
     };
-  }, [ready, shouldReduceMotion, speed, images.join(",")]);
+  }, [ready, shouldReduceMotion, speed, images, startLoop, controls]);
 
   const handleMouseEnter = () => controls.stop();
   const handleMouseLeave = () => {

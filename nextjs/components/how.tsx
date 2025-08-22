@@ -6,13 +6,12 @@ import { About } from "@/types";
 import Image from "next/image";
 
 const How = ({ data }: { data: About }) => {
-  if (!data) return null;
-
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
   };
 
+  if (!data) return null;
   return (
     <div className="container">
       <motion.h2

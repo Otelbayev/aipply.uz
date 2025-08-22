@@ -36,7 +36,7 @@ const Showcase = ({ showcase }: { showcase?: ShowcaseType }) => {
               href="/lid"
               className="block w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center rounded-lg shadow-md font-semibold hover:opacity-90 transition"
             >
-              Ro'yxatdan o'tish
+              Ro&apos;yxatdan o&apos;tish
             </Link>
           </motion.div>
         </motion.div>

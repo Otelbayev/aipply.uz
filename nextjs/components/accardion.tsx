@@ -1,26 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Phone, Send } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Module } from "@/types";
 
-interface Prop {
-  id: number;
-  question: string;
-  answer: string;
-}
-
 export default function Accardion({ modules }: { modules?: Module[] }) {
-  if (!modules) return null;
-
   const [openIndex, setOpenIndex] = useState<string | null>(null);
 
   const toggle = (index: string) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  if (!modules) return null;
   return (
     <section className="container">
       <motion.div

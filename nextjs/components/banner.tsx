@@ -16,8 +16,8 @@ const Banner: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-xl text-center md:text-4xl mt-0  md:mt-10 font-bold text-gray-800">
-            O'zbekistondagi birinchi Sun'iy intellektga ixtisoslashtirilgan
-            zamonaviy kasblar o'quv markazi!
+            O&apos;zbekistondagi birinchi Sun&apos;iy intellektga
+            ixtisoslashtirilgan zamonaviy kasblar o&apos;quv markazi!
           </h2>
           <div className="rounded-lg max-w-2xl bg-white p-4 md:p-8 mt-4  md:mt-10 text-center">
             <h2 className="bg-title font-bold text-xl md:text-2xl mb-4">
@@ -29,7 +29,7 @@ const Banner: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="cursor-pointer w-full rounded-lg py-2 font-semibold text-lg md:text-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md text-center"
               >
-                Ro'yxatdan o'tish
+                Ro&apos;yxatdan o&apos;tish
               </motion.button>
             </Link>
           </div>

@@ -8,6 +8,8 @@ import {
   FaYoutube,
   FaFacebookF,
 } from "react-icons/fa";
+import Link from "next/link";
+import Image from "next/image";
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -40,21 +42,23 @@ const Footer = () => {
           className="bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col gap-4 shadow-lg hover:shadow-xl transition-shadow duration-300"
         >
           <h2 className="text-2xl font-bold">AIPPLY ACADEMY</h2>
-          <a href="/images/certificate.png" target="blank">
-            <img
+          <Link href="/images/certificate.png" target="blank">
+            <Image
               src="/images/certificate.png"
               alt="Guvohnoma"
               className="w-32 h-auto mt-2 rounded-lg"
+              width={200}
+              height={200}
             />
-          </a>
+          </Link>
           <p className="text-sm">
             Telefon:{" "}
-            <a
+            <Link
               href="tel:+998771233300"
               className="underline hover:text-yellow-300"
             >
               +998 77 123 33 00
-            </a>
+            </Link>
           </p>
           <div className="flex gap-4 mt-2">
             <motion.a
@@ -105,30 +109,30 @@ const Footer = () => {
           className="bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col gap-3 shadow-lg hover:shadow-xl transition-shadow duration-300"
         >
           <h3 className="text-lg font-semibold">Sayt bo‘limlari</h3>
-          <a
+          <Link
             href="/#about"
             className="hover:underline hover:text-yellow-300 transition-colors"
           >
             Biz haqimizda
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#courses"
             className="hover:underline hover:text-yellow-300 transition-colors"
           >
             Kurslar
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#mentors"
             className="hover:underline hover:text-yellow-300 transition-colors"
           >
             Mentorlar
-          </a>
-          <a
+          </Link>
+          <Link
             href="/lid"
             className="hover:underline hover:text-yellow-300 transition-colors"
           >
             Bepul ochiq darsga yozilish!
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div
