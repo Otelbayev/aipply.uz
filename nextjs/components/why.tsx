@@ -26,12 +26,11 @@ const data = [
   { icon: "/icons/why/10.png", title: "Sertifikat" },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, scale: 0.9, y: 30 },
-  visible: { opacity: 1, scale: 1, y: 0 },
-};
-
 const Why = () => {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0 },
+  };
   return (
     <div className="container">
       <div id="about"></div>
@@ -49,14 +48,14 @@ const Why = () => {
         {data.map((item, index) => (
           <motion.div
             key={index}
-            variants={cardVariants}
+            variants={fadeUp}
             initial="hidden"
-            whileInView="visible"
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true, amount: 0.2 }}
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0 * 0.2, ease: "easeOut" }}
             className="flex-col md:flex-row rounded-2xl border border-blue-200 bg-white p-4 md:p-6 flex md:items-center gap-4 transition-transform"
           >
-            <div className="flex-shrink-0 ">
+            <div className="flex-shrink-0">
               <Image
                 src={item.icon}
                 width={90}
@@ -65,7 +64,7 @@ const Why = () => {
                 className="h-16 w-16 md:h-20 md:w-20 object-contain"
               />
             </div>
-            <div className="bg-title font-semibold text-xl lg:text-2xl md:w-md leading-snug">
+            <div className="bg-title font-semibold text-2xl lg:text-3xl md:w-md leading-snug">
               {item.title}
             </div>
           </motion.div>
