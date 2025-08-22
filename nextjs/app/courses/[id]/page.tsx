@@ -12,7 +12,7 @@ import { reactJs } from "@/utils/front";
 import ClientPage from "@/components/client-page";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 const courses: Record<string, Course> = {
@@ -27,8 +27,8 @@ const courses: Record<string, Course> = {
   "moushin-dizayn": motion,
 };
 
-export function generateMetadata({ params }: Props) {
-  const { id } = params;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
   const data = courses[id];
 
   if (!data) {
@@ -51,8 +51,8 @@ export function generateMetadata({ params }: Props) {
   };
 }
 
-export default function Page({ params }: Props) {
-  const { id } = params;
+export default async function Page({ params }: Props) {
+  const { id } = await params;
   const data = courses[id];
   return <ClientPage data={data} />;
 }
