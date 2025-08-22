@@ -1,9 +1,3 @@
-import then1 from "../assets/icons/then1.png";
-import then2 from "../assets/icons/then2.png";
-import then3 from "../assets/icons/then3.png";
-import then4 from "../assets/icons/then4.png";
-import then5 from "../assets/icons/then5.png";
-import img from "../assets/images/python.webp";
 import project1 from "../assets/images/front1.jpg";
 import project2 from "../assets/images/front2.webp";
 import project3 from "../assets/images/front3.webp";
@@ -12,11 +6,6 @@ import project5 from "../assets/images/front5.webp";
 import project6 from "../assets/images/front6.webp";
 import project7 from "../assets/images/front7.jpg";
 import project8 from "../assets/images/front8.jpg";
-import ai2 from "../assets/images/ai1.png";
-import ai3 from "../assets/images/ai2.png";
-import ai4 from "../assets/images/ai3.png";
-import ai5 from "../assets/images/ai4.png";
-import ai6 from "../assets/images/ai5.png";
 import courseImg from "../assets/images/course/python.png";
 import img1 from "../assets/images/results/dasturlash/1.jpg";
 import img2 from "../assets/images/results/dasturlash/2.png";
@@ -35,7 +24,7 @@ const FrontendDesc = () => (
 );
 
 export const python = {
-  courseImg,
+  courseImg: "/course/python.png",
   path: "python",
   name: "Python",
   month: 6,
@@ -56,7 +45,13 @@ export const python = {
     aiDesc:
       "Kurs davomida dasturlardan tashqari Sun'iy intellektlarda ishlashni va uni kasbingizda monitizatsiya qilishni o’rganasiz",
     computerTitle: "Dasturlashni o’rganish uchun qanday kompyuter kerak?",
-    ai: [ai5, ai6, ai4, ai3, ai2],
+    ai: [
+      "/images/ai5.png",
+      "/images/ai6.png",
+      "/images/a4.png",
+      "/images/ai3.png",
+      "/images/ai2.png",
+    ],
     processor: "i3-i7",
     memory: "256-512 GB",
     ram: "4-16 GB",
@@ -64,21 +59,32 @@ export const python = {
   },
   about: {
     name: "Python-Django-TensorFlow",
-    img: img,
+    img: "/images/python.webp",
     title: <FrontendTitle />,
     desc: <FrontendDesc />,
-    projects: [project1, project2, project3, project4, project5, project6],
+    projects: [
+      "/images/front1.jpg",
+      "/images/front2.webp",
+      "/images/front3.webp",
+      "/images/front4.jpg",
+      "/images/front5.webp",
+      "/images/front6.webp",
+    ],
   },
   then: [
-    { id: 1, icon: then1, title: "Marketing va SMM agentliklari" },
+    { id: 1, icon: "/icons/then1.png", title: "Marketing va SMM agentliklari" },
     {
       id: 2,
-      icon: then2,
+      icon: "/icons/then2.png",
       title: "O'quv markazlari, xususiy maktab va universitetlar",
     },
-    { id: 3, icon: then3, title: "Web studiyalar" },
-    { id: 4, icon: then4, title: "Firma, tashkilot va kompaniyalar" },
-    { id: 5, icon: then5, title: "Frilanser sifatida" },
+    { id: 3, icon: "/icons/then3.png", title: "Web studiyalar" },
+    {
+      id: 4,
+      icon: "/icons/then4.png",
+      title: "Firma, tashkilot va kompaniyalar",
+    },
+    { id: 5, icon: "/icons/then5.png", title: "Frilanser sifatida" },
   ],
   module: [
     {
@@ -174,6 +180,11 @@ export const python = {
       ],
     },
   ],
-  project: [project8, project7],
-  results: [img1, img2, img3, img4],
+  project: ["/images/front7.jpg", "/images/front8.jpg"],
+  results: [
+    "images/results/dasturlash/1.jpg",
+    "images/results/dasturlash/2.jpg",
+    "images/results/dasturlash/3.jpg",
+    "images/results/dasturlash/4.jpg",
+  ],
 };

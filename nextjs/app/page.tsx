@@ -1,6 +1,7 @@
 "use client";
 
 import Banner from "@/components/banner";
+import Bottom from "@/components/bottom";
 import Comments from "@/components/comments";
 import Courses from "@/components/courses";
 import Footer from "@/components/footer";
@@ -11,7 +12,6 @@ import Numbers from "@/components/numbers";
 import Results from "@/components/results";
 import Sponsors from "@/components/sponsors";
 import Why from "@/components/why";
-import Bottom from "./bottom";
 
 export default function Page() {
   return (
@@ -20,20 +20,14 @@ export default function Page() {
       <Hero />
       <Numbers />
       <Results />
-
       <Why />
-
       <Banner />
       <Comments />
-
       <Courses />
-
       <Sponsors />
       <Mentors />
       <Bottom />
-      <section id="contact">
-        <Footer />
-      </section>
+      <Footer />
     </div>
   );
 }

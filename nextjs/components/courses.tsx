@@ -100,13 +100,16 @@ const Courses = () => {
               className="flex flex-col justify-between items-center gap-4 text-center border border-blue-300 rounded-2xl p-4 md:p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               <h3 className="bg-title font-bold text-2xl">{item.title}</h3>
-              <Image
-                src={item.img}
-                alt={item.title}
-                width={130}
-                height={130}
-                className="h-30 object-contain"
-              />
+              <div className="relative w-32 h-32">
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 130px"
+                  className="object-contain"
+                />
+              </div>
+
               <p className="text-md">{item.desc}</p>
               <p className="bg-title font-semibold text-lg">
                 {item.month} oy + sertifikat

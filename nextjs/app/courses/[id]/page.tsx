@@ -1,16 +1,57 @@
-import Banner from "@/components/banner";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import React from "react";
+import type { Metadata } from "next";
+import { python } from "@/utils/python";
+import { graphicDesign } from "@/utils/graphic";
+import { Course } from "@/types";
+import { interior } from "@/utils/interior";
+import { motion } from "@/utils/motion";
+import { noCoding } from "@/utils/nocoding";
+import { computerScience } from "@/utils/computerScience";
+import { birOy } from "@/utils/biroy";
+import { foundation } from "@/utils/foundation";
+import { reactJs } from "@/utils/front";
+import ClientPage from "./client-page";
 
-const Page = () => {
-  return (
-    <div>
-      <Header />
-      <Banner />
-      <Footer />
-    </div>
-  );
+type Props = {
+  params: Promise<{ id: string }>; // 🔹 async bo‘lishi kerak
 };
 
-export default Page;
+const courses: Record<string, Course> = {
+  python,
+  "grafik-dizayn": graphicDesign,
+  "interior-exterior-dizayn": interior,
+  "kompyuter-savodxonligi": computerScience,
+  "frontend-reactjs": reactJs,
+  foundation,
+  "bir-oyda-bir-veb-sayt": birOy,
+  "no-coding": noCoding,
+  "moushin-dizayn": motion,
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params; // 🔹 params dan destructure qilish uchun await ishlatamiz
+  const data = courses[id];
+
+  if (!data) {
+    return {
+      title: "Aipply Academy kurslari",
+      description: "Zamonaviy IT va dizayn kurslari",
+    };
+  }
+
+  return {
+    title: data.showcase.title,
+    description: data.showcase.desc,
+    keywords: data.showcase.keywords,
+    icons: { icon: data.showcase.icon },
+    openGraph: {
+      title: data.showcase.title,
+      description: data.showcase.desc,
+      images: [data.showcase.icon],
+    },
+  };
+}
+
+export default async function Page({ params }: Props) {
+  const { id } = await params; // 🔹 bu yerda ham await
+  return <ClientPage id={id} />;
+}

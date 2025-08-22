@@ -1,5 +1,6 @@
 "use client";
 
+import { Showcase } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -23,7 +24,7 @@ const Header = () => {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="sticky top-0 z-50 bg-white/70 backdrop-blur-md"
+        className="sticky top-0 z-50 py-2 bg-white/70 backdrop-blur-md"
       >
         <div className="h-16 flex items-center justify-between">
           <motion.a

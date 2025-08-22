@@ -131,7 +131,6 @@ const Footer = () => {
           </a>
         </motion.div>
 
-        {/* Map */}
         <motion.div
           custom={2}
           initial="hidden"
@@ -143,7 +142,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-2">Manzilimiz</h3>
           <div className="w-full rounded-xl overflow-hidden">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?z=15&ol=biz&oid=75493422112"
+              src="https://yandex.ru/map-widget/v1/?z=16&ol=biz&oid=75493422112"
               width="100%"
               className="border-0 h-55 rounded-xl"
               allowFullScreen
@@ -158,6 +157,7 @@ const Footer = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="mt-12 text-center text-sm text-white/70"
+        id="contact"
       >
         © 2025 AIPPLY ACADEMY. Barcha huquqlar himoyalangan.
       </motion.div>

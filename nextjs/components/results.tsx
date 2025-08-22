@@ -1,9 +1,8 @@
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import React from "react";
 import AutoMarqueeSlider from "./slider-item";
 
-const Results = () => {
+const Results = ({ results }: { results?: string[] }) => {
   const images = [
     "/images/results/dasturlash/1.jpg",
     "/images/results/dasturlash/2.png",
@@ -36,7 +35,7 @@ const Results = () => {
       </div>
       <AutoMarqueeSlider
         aspect="aspect-[4/7]"
-        images={images}
+        images={results?.length ? results : images}
         speed={60}
         gapClass="gap-2"
       />
