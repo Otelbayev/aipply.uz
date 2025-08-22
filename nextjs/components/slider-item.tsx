@@ -93,7 +93,7 @@ export default function AutoMarqueeSlider({
             key={i}
             className={`
               relative flex-none
-              w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 
+              w-1/2 lg:w-1/5 
               ${aspect} overflow-hidden rounded-2xl shadow-lg
             `}
           >

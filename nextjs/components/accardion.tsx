@@ -44,16 +44,18 @@ export default function Accardion({ modules }: { modules?: Module[] }) {
             >
               <button
                 onClick={() => toggle(faq.id)}
-                className="w-full flex justify-between items-center px-5 py-4 hover:bg-blue-600 transition"
+                className="w-full flex justify-between gap-3 items-center px-5 py-4 hover:bg-blue-600 transition"
               >
                 <span className="font-bold flex items-center gap-4  text-left text-white text-base sm:text-lg">
                   <span className="text-4xl">0{index + 1}</span> {faq.title}
                 </span>
-                <ChevronDown
-                  className={`h-10 w-10 p-1 border rounded-full text-blue-200 transition-transform duration-300 ${
-                    openIndex === faq.id ? "rotate-180" : ""
-                  }`}
-                />
+                <div>
+                  <ChevronDown
+                    className={`w-[30px] h-[30px] p-1 border rounded-full text-blue-200 transition-transform duration-300 ${
+                      openIndex === faq.id ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
               </button>
 
               <AnimatePresence initial={false}>
