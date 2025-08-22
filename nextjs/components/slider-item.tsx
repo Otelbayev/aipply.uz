@@ -7,11 +7,13 @@ export default function AutoMarqueeSlider({
   speed = 120,
   gapClass = "gap-4",
   aspect,
+  width,
 }: {
   images: string[];
   speed?: number;
   gapClass?: string;
   aspect: string;
+  width?: string;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
@@ -93,7 +95,7 @@ export default function AutoMarqueeSlider({
             key={i}
             className={`
               relative flex-none
-              w-1/2 lg:w-1/5 
+              ${width ? width : "w-1/2"} md:w-1/4 lg:w-1/5 
               ${aspect} overflow-hidden rounded-2xl shadow-lg
             `}
           >

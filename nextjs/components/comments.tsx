@@ -33,6 +33,7 @@ const Comments = () => {
         images={images}
         speed={60}
         gapClass="gap-2"
+        width={"w-full"}
       />
     </>
   );
