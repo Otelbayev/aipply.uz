@@ -34,17 +34,16 @@ const cardVariants = {
 const Why = () => {
   return (
     <div className="container">
-      <section id="about">
-        <motion.h2
-          initial={{ x: -20, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.8 }}
-          className="bg-title text-3xl pt-10 md:text-5xl md:pt-20 font-bold"
-        >
-          Nega aynan Aipply Academy?
-        </motion.h2>
-      </section>
+      <div id="about"></div>
+      <motion.h2
+        initial={{ x: -20, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.8 }}
+        className="bg-title text-3xl pt-10 md:text-5xl md:pt-20 font-bold"
+      >
+        Nega aynan Aipply Academy?
+      </motion.h2>
 
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 pt-6 md:pt-12">
         {data.map((item, index) => (

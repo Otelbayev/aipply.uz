@@ -41,7 +41,9 @@ const Footer = () => {
           variants={cardVariants}
           className="bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col gap-4 shadow-lg hover:shadow-xl transition-shadow duration-300"
         >
-          <h2 className="text-2xl font-bold">AIPPLY ACADEMY</h2>
+          <h2 id="contact" className="text-2xl font-bold">
+            AIPPLY ACADEMY
+          </h2>
           <Link href="/images/certificate.png" target="blank">
             <Image
               src="/images/certificate.png"
@@ -161,7 +163,6 @@ const Footer = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="mt-12 text-center text-sm text-white/70"
-        id="contact"
       >
         © 2025 AIPPLY ACADEMY. Barcha huquqlar himoyalangan.
       </motion.div>
