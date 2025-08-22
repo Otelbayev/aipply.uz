@@ -44,7 +44,7 @@ const Why = () => {
         Nega aynan Aipply Academy?
       </motion.h2>
 
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 pt-6 md:pt-12">
+      <div className="grid gap-3 grid-cols-2 md:gap-6 pt-6 md:pt-12">
         {data.map((item, index) => (
           <motion.div
             key={index}
@@ -64,7 +64,7 @@ const Why = () => {
                 className="h-16 w-16 md:h-20 md:w-20 object-contain"
               />
             </div>
-            <div className="bg-title font-semibold text-2xl lg:text-3xl md:w-md leading-snug">
+            <div className="bg-title font-semibold text-sm lg:text-3xl md:w-md leading-snug">
               {item.title}
             </div>
           </motion.div>

@@ -9,10 +9,10 @@ import { computerScience } from "@/utils/computerScience";
 import { birOy } from "@/utils/biroy";
 import { foundation } from "@/utils/foundation";
 import { reactJs } from "@/utils/front";
-import ClientPage from "./client-page";
+import ClientPage from "@/components/client-page";
 
 type Props = {
-  params: Promise<{ id: string }>; // 🔹 async bo‘lishi kerak
+  params: { id: string };
 };
 
 const courses: Record<string, Course> = {
@@ -27,8 +27,8 @@ const courses: Record<string, Course> = {
   "moushin-dizayn": motion,
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params; // 🔹 params dan destructure qilish uchun await ishlatamiz
+export function generateMetadata({ params }: Props) {
+  const { id } = params;
   const data = courses[id];
 
   if (!data) {
@@ -51,7 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: Props) {
-  const { id } = await params; // 🔹 bu yerda ham await
-  return <ClientPage id={id} />;
+export default function Page({ params }: Props) {
+  const { id } = params;
+  const data = courses[id];
+  return <ClientPage data={data} />;
 }
