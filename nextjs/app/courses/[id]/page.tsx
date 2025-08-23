@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import ClientPage from "@/components/client-page";
 import { python } from "@/utils/python";
 import { graphicDesign } from "@/utils/graphic";
-import { Course } from "@/types";
 import { interior } from "@/utils/interior";
 import { motion } from "@/utils/motion";
 import { noCoding } from "@/utils/nocoding";
@@ -9,11 +9,7 @@ import { computerScience } from "@/utils/computerScience";
 import { birOy } from "@/utils/biroy";
 import { foundation } from "@/utils/foundation";
 import { reactJs } from "@/utils/front";
-import ClientPage from "@/components/client-page";
-
-type Props = {
-  params: Promise<{ id: string }>;
-};
+import { Course } from "@/types";
 
 const courses: Record<string, Course> = {
   python,
@@ -27,8 +23,16 @@ const courses: Record<string, Course> = {
   "moushin-dizayn": motion,
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
+export async function generateStaticParams() {
+  return Object.keys(courses).map((id) => ({ id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params; // 🔑 params endi await qilinadi
   const data = courses[id];
 
   if (!data) {
@@ -51,8 +55,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: Props) {
-  const { id } = await params;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params; // 🔑 bu ham await qilinadi
   const data = courses[id];
   return <ClientPage data={data} />;
 }
