@@ -135,6 +135,12 @@ const Footer = () => {
           >
             Bepul ochiq darsga yozilish!
           </Link>
+          <Link
+            href="/public-offer"
+            className="hover:underline hover:text-yellow-300 transition-colors"
+          >
+            Ommaviy oferta
+          </Link>
         </motion.div>
 
         <motion.div
